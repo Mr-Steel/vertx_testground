@@ -1,0 +1,7 @@
+{
+  // Java verticle
+    "main": "net.steel.vertx.verticles.StarterVerticle",
+    "description": "Test Project",
+    "author": "Björn Stahl",
+    "homepage": "https://github.com/Mr-Steel/vertx_test"
+}
