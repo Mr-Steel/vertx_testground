@@ -7,7 +7,7 @@
     <artifactId>test</artifactId>
     <packaging>jar</packaging>
     <version>1.0.0-SNAPSHOT</version>
-    <name>Project - test</name>
+    <name>Project - Test Ground</name>
 
     <parent>
         <groupId>org.sonatype.oss</groupId>
@@ -38,6 +38,8 @@
         <vertx.version>2.1.4</vertx.version>
         <vertx.testtools.version>2.0.3-final</vertx.testtools.version>
         <junit.version>4.11</junit.version>
+
+        <slf4j.version>1.7.7</slf4j.version>
 
         <!--Plugin versions-->
         <maven.compiler.plugin.version>3.0</maven.compiler.plugin.version>
@@ -78,6 +80,19 @@
             <version>${vertx.version}</version>
             <scope>provided</scope>
         </dependency>
+        <!-- slf4j-log4j dependencies-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
         <!--Test dependencies-->
         <dependency>
             <groupId>junit</groupId>

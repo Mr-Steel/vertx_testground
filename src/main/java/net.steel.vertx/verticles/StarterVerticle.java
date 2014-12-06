@@ -18,5 +18,8 @@ public class StarterVerticle extends Verticle {
 
         LOGGER.info(" ---> " + LoggerVerticle.class.getName());
         container.deployWorkerVerticle(LoggerVerticle.class.getName(), 1);
+
+        LOGGER.info(" ---> " + ControlVerticle.class.getName());
+        container.deployWorkerVerticle(ControlVerticle.class.getName(), 1);
     }
 }

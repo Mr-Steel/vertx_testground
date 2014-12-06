@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
+
+<log4j:configuration debug="true">
+
+    <appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">
+    <layout class="org.apache.log4j.PatternLayout">
+    <param name="ConversionPattern" value="%d %p [%t] %c - %m%n"/>
+    </layout>
+    </appender>
+
+    <!--<appender name="fileInfoAppender" class="org.apache.log4j.DailyRollingFileAppender">-->
+        <!--<param name="File" value="/srv/log/shared_tracking_info.log"/>-->
+        <!--<param name="Threshold" value="INFO"/>-->
+        <!--<layout class="org.apache.log4j.PatternLayout">-->
+            <!--<param name="ConversionPattern" value="%d %p [%t] %c - %m%n"/>-->
+        <!--</layout>-->
+    <!--</appender>-->
+
+
+    <category name="com.zanox.tracking.sharedtracking.verticles.HttpVerticle" additivity="false">
+        <priority value="INFO" />
+        <appender-ref ref="callbackLogEntry"/>
+    </category>
+
+    <category name="com.zanox.tracking.sharedtracking" additivity="false">
+        <priority value="WARN" />
+        <appender-ref ref="fileErrorAppender"/>
+    </category>
+
+    <category name="com.zanox.tracking.sharedtracking" additivity="false">
+        <priority value="INFO" />
+        <appender-ref ref="fileInfoAppender"/>
+    </category>
+
+    <root>
+        <level value="INFO"/>
+        <appender-ref ref="fileInfoAppender"/>
+        <appender-ref ref="consoleAppender" />
+    </root>
+
+</log4j:configuration>
